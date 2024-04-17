@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
+import { BASE_URL } from "../../constants/constant";
 export const addToCartAction = createAsyncThunk("cart/add", async (product, { rejectWithValue }) => {
     try {
         const token = JSON.parse(localStorage.getItem("ecommerce-token"));
@@ -19,7 +19,7 @@ export const addToCartAction = createAsyncThunk("cart/add", async (product, { re
 export const getCartAction = createAsyncThunk("cart/get", async (product, { rejectWithValue }) => {
     try {
         const token = JSON.parse(localStorage.getItem("ecommerce-token"));
-        const { data } = await axios.get("http://localhost:8000/api/v1/cart", {
+        const { data } = await axios.get(`${BASE_URL}/api/v1/cart`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -35,7 +35,7 @@ export const getCartAction = createAsyncThunk("cart/get", async (product, { reje
 export const removeCartAction = createAsyncThunk("cart/remove", async (product_id, { rejectWithValue }) => {
     try {
         const token = JSON.parse(localStorage.getItem("ecommerce-token"));
-        const { data } = await axios.delete(`http://localhost:8000/api/v1/cart/${product_id}`, {
+        const { data } = await axios.delete(`${BASE_URL}/api/v1/cart/${product_id}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -51,7 +51,7 @@ export const removeCartAction = createAsyncThunk("cart/remove", async (product_i
 export const removeAllCartAction = createAsyncThunk("cart/removeAll", async () => {
     try {
         const token = JSON.parse(localStorage.getItem("ecommerce-token"));
-        const { data } = await axios.delete(`http://localhost:8000/api/v1/cart`, {
+        const { data } = await axios.delete(`${BASE_URL}/api/v1/cart`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
