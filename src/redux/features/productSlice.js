@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
+import { BASE_URL } from "../../constants/constant";
 // getAllProduct action
 export const getAllProductAction = createAsyncThunk(
     "product/getAllProduct",
     async (payload, { rejectWithValue }) => {
         try {
             const { data } = await axios.get(
-                `http://localhost:8000/api/v1/product/${payload}`
+                `${BASE_URL}/api/v1/product/${payload}`
             );
             return data;
         } catch (error) {
@@ -22,7 +22,7 @@ export const getSingleProductAction = createAsyncThunk(
     async (product_id, { rejectWithValue }) => {
         try {
             const { data } = await axios.get(
-                `http://localhost:8000/api/v1/product/single-product/${product_id}`
+                `${ BASE_URL}/api/v1/product/single-product/${product_id}`
             );
             return data;
         } catch (error) {

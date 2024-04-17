@@ -32,7 +32,7 @@ const Banner = () => {
                 setCurrentSlide(currentslide < bannerImages.length - 1 ? currentslide + 1 : 0)
             }, 3000)
         }
-        // changeBannerImg()
+        changeBannerImg()
         return (() => {
             clearTimeout(timeout)
         })
