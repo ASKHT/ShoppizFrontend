@@ -4,7 +4,7 @@ import { BASE_URL } from "../../constants/constant";
 export const addToCartAction = createAsyncThunk("cart/add", async (product, { rejectWithValue }) => {
     try {
         const token = JSON.parse(localStorage.getItem("ecommerce-token"));
-        const { data } = await axios.post("http://localhost:8000/api/v1/cart", product, {
+        const { data } = await axios.post(`${BASE_URL}/api/v1/cart`, product, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
