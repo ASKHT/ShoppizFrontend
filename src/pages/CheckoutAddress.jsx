@@ -6,7 +6,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import ContentWrapper from "../components/ContentWrapper";
 import { getAddressApi } from "../api/address.api";
-
+import { BASE_URL } from "../constants/constant";
 const CheckoutAddress = () => {
     let cartData = useSelector((state) => state.cart);
     const {name}=JSON.parse(localStorage.getItem("ecommerce-user"))
@@ -35,7 +35,7 @@ const CheckoutAddress = () => {
         };
         const {
             data: { order },
-        } = await axios.post("http://localhost:8000/api/v1/payment/checkout", cartData.data);
+        } = await axios.post(`${BASE_URL}/api/v1/payment/checkout`, cartData.data);
 
         const options = {
             key: "rzp_test_iZCY07ZM7DSPae",
@@ -45,7 +45,7 @@ const CheckoutAddress = () => {
             description: "Test Transaction",
             image: "https://example.com/your_logo",
             order_id: order.id,
-            callback_url: "http://localhost:8000/api/v1/payment/verification",
+            callback_url:` ${BASE_URL}/api/v1/payment/verification`,
             prefill: {
                 name: name,
                 email: "test@example.com",
