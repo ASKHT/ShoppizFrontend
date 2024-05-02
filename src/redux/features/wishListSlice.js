@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { BASE_URL } from "../../constants/constant";
 // wishlist action
 export const addwishListAction = createAsyncThunk(
     "wishlist/add",
@@ -8,7 +8,7 @@ export const addwishListAction = createAsyncThunk(
         try {
             const token = JSON.parse(localStorage.getItem("ecommerce-token"));
             const { data } = await axios.post(
-                "http://localhost:8000/api/v1/user/wishlist",
+                `${BASE_URL}/api/v1/user/wishlist`,
                 product_id,
                 {
                     headers: {
