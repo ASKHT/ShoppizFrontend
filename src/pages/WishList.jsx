@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ProductCard } from "../components/ProductCard";
 import ContentWrapper from "../components/ContentWrapper";
 import ProductCardLoading from "../components/loading/ProductCardLoading";
-
+import { BASE_URL } from "../constants/constant";
 const WishList = () => {
     const wishlist = useSelector((state) => state.wishlist.data);
     const [product, setProduct] = useState();
@@ -12,7 +12,7 @@ const WishList = () => {
     useEffect(() => {
         const fetchWishlist = async () => {
             const token = JSON.parse(localStorage.getItem("ecommerce-token"));
-            const { data } = await axios.get("http://localhost:8000/api/v1/user/wishlist", {
+            const { data } = await axios.get(`${BASE_URL}/api/v1/user/wishlist`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -39,17 +39,6 @@ const WishList = () => {
                         <ProductCardLoading />
                     </div>
                 )}
-                {/* {loading ? (
-                    <div className="flex justify-between gap-5 mt-5">
-                        <ProductCardLoading />
-                        <ProductCardLoading />
-                        <ProductCardLoading />
-                    </div>
-                ) : (
-                    <div className="grid grid-row-4 grid-cols-3 grid-flow-row-dense gap-5 mt-5">
-                        {data && data?.map((item) => <ProductCard key={item._id} item={item} />)}
-                    </div>
-                )} */}
             </div>
         </ContentWrapper>
     );
