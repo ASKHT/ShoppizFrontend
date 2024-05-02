@@ -20,28 +20,4 @@ This is a full-stack e-commerce web application built using the MERN (MongoDB, E
 - **Database**: MongoDB
 - **Payment Gateway**: Razorpay
 
-## Setup Instructions
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/ASKHT/mern-ecommerce.git
-
-cd mern-ecommerce
-cd frontend
-npm install
-cd ..
-cd backend
-npm install
-## env variable setup
-MONGODB_URI=your_mongodb_connection_string
-RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_KEY_SECRET=your_razorpay_key_secret
-jwtsecret=your_secret
-
-##1 how to run backend
-cd backend
-npm start
-## 2 how to run frontend
-cd frontend
-npm start
