@@ -9,6 +9,7 @@ import { getAddressApi } from "../api/address.api";
 import { BASE_URL } from "../constants/constant";
 const CheckoutAddress = () => {
     let cartData = useSelector((state) => state.cart);
+    // console.log(cartData?.data?.cartItems.length<1?console.log("bad error"):console.log("all set"));
     const {name}=JSON.parse(localStorage.getItem("ecommerce-user"))
     // console.log(name)
     const navigate = useNavigate();
@@ -30,6 +31,9 @@ const CheckoutAddress = () => {
 
     // payment integration
     const CheckoutHandler = async () => {
+        if(cartData?.data?.cartItems.length<1){
+            return alert("your shopping cart is empty")
+        }
         const body = {
             products: cartData?.data?.cartItems,
         };
