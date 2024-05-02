@@ -38,7 +38,7 @@ const Orders = () => {
                 </div>
               
            </div>
-           <div className="flex flex-col h-[20rem] justify-around">
+           <div className="flex flex-col h-[20rem] justify-around overflow-y-scroll">
                 {orders && orders?.length>0? (
                     orders?.map((item)=>(
                         <div key={item.order_id} className="flex w-[65vw] justify-around text-justify border-b-2 border-gray py-4">

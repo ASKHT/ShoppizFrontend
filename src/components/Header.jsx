@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { FaSearch, FaUser, FaRegHeart } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -9,9 +9,11 @@ import ContentWrapper from "./ContentWrapper";
 import { Categories } from "./Categories";
 import { logout } from "../redux/features/authSlice";
 import { getCartAction } from "../redux/features/cartSlice";
+
 // import sitelogo from "../assets/banner-img/logoofcompany.jpg"
 import { BsCart3 } from "react-icons/bs";
 const Header = () => {
+    const navigate=useNavigate()
     let quantity = 0;
     const { data } = useSelector((state) => state.auth);
     const cartItem = useSelector((state) => state.cart);
@@ -20,6 +22,7 @@ const Header = () => {
 
     const handleLogout = async () => {
         dispatch(logout());
+        navigate("/")
     };
 
     useEffect(() => {
