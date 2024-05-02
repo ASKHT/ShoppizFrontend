@@ -83,7 +83,7 @@ const Header = () => {
                             <Link to="/login">
                                 <FaRegHeart className="text-2xl cursor-pointer" />
                             </Link>
-                            <Link to="/cart">
+                            <Link to="/login">
                                 <FaCartShopping className="text-2xl cursor-pointer" />
                             </Link>
 
