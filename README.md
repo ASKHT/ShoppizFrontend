@@ -1,8 +1,23 @@
-# React + Vite
+# MERN E-Commerce App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a full-stack e-commerce web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. The application allows users to browse products, add them to cart or wishlist, make payments using Razorpay, manage user profiles, and write reviews for purchased products.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication**: Sign up, log in, and log out securely.
+- **Product Management**: Admins can manage products (add, edit, delete).
+- **Shopping Cart**: Add products to cart, adjust quantities, and proceed to checkout.
+- **Wishlist**: Save favorite products for future reference.
+- **Payment Processing**: Integrated with Razorpay for secure payments.
+- **User Profile**: View and edit user profile information.
+- **Order History**: View past orders and their status.
+- **Product Reviews**: Write reviews for purchased products.
+
+## Technologies Used
+
+- **Frontend**: React.js, Redux, HTML, CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Payment Gateway**: Razorpay
+
+
