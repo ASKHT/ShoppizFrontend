@@ -40,7 +40,7 @@ const Header = () => {
                     <div className="flex basis-[50%] items-center bg-white border-2 border-[black] p-1 rounded-[10px]">
                         <input
                             type="text"
-                            placeholder="What are you looking for ?"
+                            placeholder="Currently search bar is not working all other features are working?"
                             className="w-full px-3 outline-none"
                         />
                         <FaSearch className="text-4xl px-2" />
